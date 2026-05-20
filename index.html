@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet — Pleasure, Perfected</title>
+  <meta name="description" content="Velvet — Premium adult wellness products. Discreet, luxurious, delivered.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Age Gate -->
+<div id="age-gate">
+  <div class="age-gate-logo">VELVET</div>
+  <div class="age-gate-divider"></div>
+  <h2>You must be 18 or older to enter</h2>
+  <p>By entering this site you confirm that you are at least 18 years old and consent to viewing adult content.</p>
+  <div class="age-gate-buttons">
+    <button class="btn" id="age-enter">I am 18+, Enter</button>
+    <button class="btn btn-ghost" id="age-exit">Exit</button>
+  </div>
+</div>
+
+<!-- Loader -->
+<div id="page-loader"><div class="spinner"></div></div>
+
+<!-- Toast -->
+<div id="toast-container"></div>
+
+<!-- Announcement Bar -->
+<div id="announcement-bar">✦ Free discreet shipping on orders over €50 &nbsp;·&nbsp; Use code VELVET10 for 10% off ✦</div>
+
+<!-- Navbar -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VELVET</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="blog.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle" title="Toggle theme"></button>
+      <button class="nav-icon-btn" id="nav-search-btn" title="Search">🔍</button>
+      <a href="wishlist.html" class="nav-icon-btn" title="Wishlist">♡</a>
+      <a href="account.html" class="nav-icon-btn" title="Account">👤</a>
+      <a href="cart.html" class="nav-icon-btn" title="Cart">
+        🛍️<span class="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu-overlay"></div>
+<div id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Journal</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="wishlist.html">Wishlist</a></li>
+    <li><a href="account.html">Account</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <div class="mobile-nav-actions" style="margin-top:28px">
+    <button class="theme-toggle" title="Toggle theme"></button>
+    <span style="font-size:13px;color:var(--text-secondary)">Toggle theme</span>
+  </div>
+</div>
+
+<!-- Nav Search Overlay -->
+<div id="nav-search-overlay">
+  <button class="nav-search-close" id="nav-search-close">✕</button>
+  <div class="nav-search-inner">
+    <p style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px">What are you looking for?</p>
+    <div class="nav-search-input-wrap">
+      <span>🔍</span>
+      <input type="text" id="nav-search-input" placeholder="Search products…" autocomplete="off">
+    </div>
+    <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap">
+      <span style="font-size:12px;color:var(--text-secondary);letter-spacing:1px;text-transform:uppercase;align-self:center">Popular:</span>
+      <button class="suggestion-tag" onclick="window.location.href='search.html?q=vibrator'">Vibrators</button>
+      <button class="suggestion-tag" onclick="window.location.href='search.html?q=couples'">Couples</button>
+      <button class="suggestion-tag" onclick="window.location.href='search.html?q=wellness'">Wellness</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">New Collection 2025</span>
+    <h1><span>Pleasure,</span><br><em>Perfected.</em></h1>
+    <p>Curated adult wellness for the discerning. Discreet. Luxurious. Yours.</p>
+    <div class="hero-buttons">
+      <a href="shop.html" class="btn">Shop Now</a>
+      <a href="blog.html" class="btn btn-outline">The Journal</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ============================================================
+     FEATURED PRODUCTS
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-in">
+      <p class="section-subtitle" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent)">Curated Selection</p>
+      <h2 class="section-title">Featured Products</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="carousel-wrap" id="featured-carousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+      <div class="carousel-dots">
+        <div class="carousel-dot active"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px">
+      <a href="shop.html" class="btn btn-outline">View All Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORIES
+     ============================================================ -->
+<section class="section" style="background:var(--bg-mid);padding:80px 0">
+  <div class="container">
+    <div class="text-center fade-in">
+      <p class="section-subtitle" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent)">Explore</p>
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="categories-grid fade-in">
+      <div class="category-card" data-category="Vibrators">
+        <div class="category-icon">💜</div>
+        <div class="category-name">Vibrators</div>
+      </div>
+      <div class="category-card" data-category="Couples">
+        <div class="category-icon">💞</div>
+        <div class="category-name">Couples</div>
+      </div>
+      <div class="category-card" data-category="Accessories">
+        <div class="category-icon">✨</div>
+        <div class="category-name">Accessories</div>
+      </div>
+      <div class="category-card" data-category="Wellness">
+        <div class="category-icon">🌿</div>
+        <div class="category-name">Wellness</div>
+      </div>
+      <div class="category-card" data-category="Lingerie">
+        <div class="category-icon">🌸</div>
+        <div class="category-name">Lingerie</div>
+      </div>
+      <div class="category-card" data-category="BDSM">
+        <div class="category-icon">🖤</div>
+        <div class="category-name">BDSM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY VELVET
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-in">
+      <p class="section-subtitle" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent)">Our Promise</p>
+      <h2 class="section-title">Why Velvet</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <div class="trust-icon">📦</div>
+        <h4>Discreet Packaging</h4>
+        <p>Every order ships in plain, unmarked packaging. Your privacy is our priority.</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">⚡</div>
+        <h4>Fast Delivery</h4>
+        <p>Express shipping available. Standard orders arrive within 2–3 business days.</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">💎</div>
+        <h4>Premium Quality</h4>
+        <p>Body-safe materials only. Every product is tested and certified.</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon">💬</div>
+        <h4>24/7 Support</h4>
+        <p>Our discreet support team is available around the clock for any questions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================ -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="fade-in">
+      <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px">Stay in the know</p>
+      <h2 style="margin-bottom:12px">Join the Velvet Circle</h2>
+      <p style="margin-bottom:32px;max-width:460px;margin-left:auto;margin-right:auto">Exclusive offers, new arrivals, and wellness guides — delivered to your inbox. 10% off your first order.</p>
+      <form class="newsletter-form" onsubmit="return false">
+        <input type="email" placeholder="Your email address">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-in">
+      <p class="section-subtitle" style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent)">Reviews</p>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="carousel-wrap" id="testimonials-carousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Absolutely exceptional quality. The packaging was so discreet, and the product itself exceeded every expectation. Velvet has a customer for life."</p>
+            <div class="testimonial-author">— Sophie M.</div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"I was hesitant to order online but Velvet made the whole experience feel safe and luxurious. Fast shipping, beautiful product, zero judgment."</p>
+            <div class="testimonial-author">— Isabelle R.</div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★☆</div>
+            <p class="testimonial-text">"The customer service team was incredibly helpful and discreet. My order arrived beautifully packaged and in perfect condition."</p>
+            <div class="testimonial-author">— Clara V.</div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"Velvet is exactly what the adult wellness space needed — premium, tasteful, and completely private. I recommend to everyone I know."</p>
+            <div class="testimonial-author">— Margot D.</div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The quality is truly luxury-level. Everything from the website experience to unboxing felt thoughtful and elegant."</p>
+            <div class="testimonial-author">— Elena K.</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+      <div class="carousel-dots">
+        <div class="carousel-dot active"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSTAGRAM GRID
+     ============================================================ -->
+<section style="padding-bottom:80px">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:32px">
+      <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:8px">@velvetstore</p>
+      <h2 class="section-title">Follow the Aesthetic</h2>
+    </div>
+    <div class="instagram-grid fade-in">
+      <div class="instagram-item"><img src="https://picsum.photos/seed/ig1/300/300" alt=""><div class="instagram-overlay">+</div></div>
+      <div class="instagram-item"><img src="https://picsum.photos/seed/ig2/300/300" alt=""><div class="instagram-overlay">+</div></div>
+      <div class="instagram-item"><img src="https://picsum.photos/seed/ig3/300/300" alt=""><div class="instagram-overlay">+</div></div>
+      <div class="instagram-item"><img src="https://picsum.photos/seed/ig4/300/300" alt=""><div class="instagram-overlay">+</div></div>
+      <div class="instagram-item"><img src="https://picsum.photos/seed/ig5/300/300" alt=""><div class="instagram-overlay">+</div></div>
+      <div class="instagram-item"><img src="https://picsum.photos/seed/ig6/300/300" alt=""><div class="instagram-overlay">+</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>VELVET</h3>
+      <p>Pleasure, perfected. Premium adult wellness delivered with discretion and elegance since 2018.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">📷</a>
+        <a href="#" class="social-link" title="Twitter">🐦</a>
+        <a href="#" class="social-link" title="Pinterest">📌</a>
+        <a href="#" class="social-link" title="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="shop.html">All Products</a></li>
+        <li><a href="shop.html?category=Vibrators">Vibrators</a></li>
+        <li><a href="shop.html?category=Couples">Couples</a></li>
+        <li><a href="shop.html?category=Wellness">Wellness</a></li>
+        <li><a href="shop.html?category=Lingerie">Lingerie</a></li>
+        <li><a href="shop.html?category=BDSM">BDSM</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">FAQ</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter / X</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="blog.html">The Journal</a></li>
+      </ul>
+      <div style="margin-top:24px;padding:16px;background:rgba(183,110,121,.1);border:1px solid rgba(183,110,121,.3);border-radius:4px">
+        <p style="font-size:12px;color:var(--text-secondary);line-height:1.6">🔒 All billing appears as <strong style="color:var(--text-primary)">VLT Commerce Ltd</strong> on your statement.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>
+      <p class="footer-bottom-text">© 2025 Velvet. All rights reserved. &nbsp;·&nbsp; Adults only (18+)</p>
+    </div>
+    <div class="payment-icons">
+      <span class="payment-icon">VISA</span>
+      <span class="payment-icon">MC</span>
+      <span class="payment-icon">PayPal</span>
+      <span class="payment-icon">Apple Pay</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies to enhance your experience. By continuing, you agree to our <a href="#">Cookie Policy</a> and <a href="#">Privacy Policy</a>.</p>
+  <div class="cookie-btns">
+    <button class="btn" id="cookie-accept" style="padding:10px 20px;font-size:12px">Accept All</button>
+    <button class="btn btn-ghost" id="cookie-decline" style="padding:10px 20px;font-size:12px">Decline</button>
+  </div>
+</div>
+
+<!-- Back to Top -->
+<button id="back-to-top" title="Back to top">↑</button>
+
+<!-- Quick View Modal -->
+<div class="modal-overlay" id="quick-view-modal">
+  <div class="modal">
+    <button class="modal-close" id="qv-close">✕</button>
+    <div class="modal-grid">
+      <div class="modal-img"><img src="" alt="" id="qv-img"></div>
+      <div class="modal-info">
+        <div class="product-card-category" id="qv-category"></div>
+        <h3 id="qv-name"></h3>
+        <div class="product-card-rating" style="margin-bottom:16px"><span class="stars" id="qv-stars"></span></div>
+        <div class="product-card-price" style="margin-bottom:20px">
+          <span class="price-current" id="qv-price"></span>
+          <span class="price-original" id="qv-orig"></span>
+        </div>
+        <button class="btn" id="qv-add-cart" style="width:100%;margin-bottom:10px">Add to Cart</button>
+        <a href="#" class="btn btn-outline" id="qv-view-full" style="display:block;text-align:center">View Full Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

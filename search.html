@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — Velvet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-loader"><div class="spinner"></div></div>
+<div id="toast-container"></div>
+<div id="announcement-bar">✦ Free discreet shipping on orders over €50 ✦</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VELVET</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="blog.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle"></button>
+      <button class="nav-icon-btn" id="nav-search-btn">🔍</button>
+      <a href="wishlist.html" class="nav-icon-btn">♡</a>
+      <a href="account.html" class="nav-icon-btn">👤</a>
+      <a href="cart.html" class="nav-icon-btn">🛍️<span class="cart-badge" style="display:none">0</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu-overlay"></div>
+<div id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+    <li><a href="wishlist.html">Wishlist</a></li><li><a href="account.html">Account</a></li><li><a href="cart.html">Cart</a></li>
+  </ul>
+</div>
+
+<div id="nav-search-overlay">
+  <button class="nav-search-close" id="nav-search-close">✕</button>
+  <div class="nav-search-inner">
+    <div class="nav-search-input-wrap"><span>🔍</span><input type="text" id="nav-search-input" placeholder="Search products…"></div>
+  </div>
+</div>
+
+<div class="page-header">
+  <h1>Search</h1>
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Search</span></div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <div class="search-bar-large">
+        <input type="text" id="search-input" placeholder="Search products, categories…" autocomplete="off">
+        <button class="search-submit" id="search-submit-btn">🔍</button>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-bottom:40px">
+      <p id="search-result-count" style="font-size:13px;color:var(--text-secondary)"></p>
+    </div>
+
+    <!-- Popular searches -->
+    <div class="text-center" style="margin-bottom:40px">
+      <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px">Popular Searches</p>
+      <div class="search-suggestions">
+        <button class="suggestion-tag">Vibrator</button>
+        <button class="suggestion-tag">Couples</button>
+        <button class="suggestion-tag">Wellness</button>
+        <button class="suggestion-tag">Silk</button>
+        <button class="suggestion-tag">Lingerie</button>
+        <button class="suggestion-tag">Rose</button>
+        <button class="suggestion-tag">Luxury</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="products-grid" id="search-results"></div>
+
+    <!-- No results -->
+    <div class="no-results" id="no-results">
+      <div class="no-results-icon">🔍</div>
+      <h3>No results found</h3>
+      <p>Try a different search term or explore our categories below.</p>
+      <div class="search-suggestions">
+        <button class="suggestion-tag">Vibrators</button>
+        <button class="suggestion-tag">Couples</button>
+        <button class="suggestion-tag">Wellness</button>
+        <button class="suggestion-tag">Accessories</button>
+      </div>
+      <div style="margin-top:28px">
+        <a href="shop.html" class="btn">Browse All Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><h3>VELVET</h3><p>Premium adult wellness, delivered with discretion.</p></div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li></ul></div>
+    <div class="footer-col"><h4>Help</h4><ul><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-text">© 2025 Velvet. Adults only (18+).</p>
+    <div class="payment-icons"><span class="payment-icon">VISA</span><span class="payment-icon">MC</span><span class="payment-icon">PayPal</span></div>
+  </div>
+</footer>
+
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies. <a href="#">Learn more</a>.</p>
+  <div class="cookie-btns">
+    <button class="btn" id="cookie-accept" style="padding:10px 20px;font-size:12px">Accept</button>
+    <button class="btn btn-ghost" id="cookie-decline" style="padding:10px 20px;font-size:12px">Decline</button>
+  </div>
+</div>
+<button id="back-to-top">↑</button>
+<div class="modal-overlay" id="quick-view-modal">
+  <div class="modal"><button class="modal-close" id="qv-close">✕</button>
+    <div class="modal-grid">
+      <div class="modal-img"><img src="" alt="" id="qv-img"></div>
+      <div class="modal-info"><div class="product-card-category" id="qv-category"></div><h3 id="qv-name"></h3><div class="product-card-rating" style="margin-bottom:16px"><span class="stars" id="qv-stars"></span></div><div class="product-card-price" style="margin-bottom:20px"><span class="price-current" id="qv-price"></span><span class="price-original" id="qv-orig"></span></div><button class="btn" id="qv-add-cart" style="width:100%;margin-bottom:10px">Add to Cart</button><a href="#" class="btn btn-outline" id="qv-view-full" style="display:block;text-align:center">View Full Details</a></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

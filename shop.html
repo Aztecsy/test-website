@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Velvet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-loader"><div class="spinner"></div></div>
+<div id="toast-container"></div>
+<div id="announcement-bar">✦ Free discreet shipping on orders over €50 &nbsp;·&nbsp; Use code VELVET10 for 10% off ✦</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VELVET</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="blog.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle" title="Toggle theme"></button>
+      <button class="nav-icon-btn" id="nav-search-btn">🔍</button>
+      <a href="wishlist.html" class="nav-icon-btn">♡</a>
+      <a href="account.html" class="nav-icon-btn">👤</a>
+      <a href="cart.html" class="nav-icon-btn">🛍️<span class="cart-badge" style="display:none">0</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu-overlay"></div>
+<div id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="blog.html">Journal</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="wishlist.html">Wishlist</a></li>
+    <li><a href="account.html">Account</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+</div>
+
+<div id="nav-search-overlay">
+  <button class="nav-search-close" id="nav-search-close">✕</button>
+  <div class="nav-search-inner">
+    <div class="nav-search-input-wrap">
+      <span>🔍</span>
+      <input type="text" id="nav-search-input" placeholder="Search products…" autocomplete="off">
+    </div>
+  </div>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>The Collection</h1>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Shop</span>
+  </div>
+</div>
+
+<!-- Shop Layout -->
+<section class="section">
+  <div class="container">
+    <div class="shop-layout">
+
+      <!-- Sidebar -->
+      <aside class="shop-sidebar fade-in">
+        <div class="filter-group">
+          <div class="filter-group-title">Categories</div>
+          <label class="filter-option"><input type="checkbox" class="filter-category" value="Vibrators"> Vibrators</label>
+          <label class="filter-option"><input type="checkbox" class="filter-category" value="Couples"> Couples</label>
+          <label class="filter-option"><input type="checkbox" class="filter-category" value="Accessories"> Accessories</label>
+          <label class="filter-option"><input type="checkbox" class="filter-category" value="Wellness"> Wellness</label>
+          <label class="filter-option"><input type="checkbox" class="filter-category" value="Lingerie"> Lingerie</label>
+          <label class="filter-option"><input type="checkbox" class="filter-category" value="BDSM"> BDSM</label>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">Price Range</div>
+          <input type="range" id="price-max" min="0" max="200" value="200" step="5">
+          <div class="price-display">
+            <span>€0</span><span id="price-display-max">€200</span>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">Rating</div>
+          <label class="filter-option"><input type="checkbox" class="filter-rating" value="4"> 4★ &amp; above</label>
+          <label class="filter-option"><input type="checkbox" class="filter-rating" value="4.5"> 4.5★ &amp; above</label>
+          <label class="filter-option"><input type="checkbox" class="filter-rating" value="5"> 5★ only</label>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-group-title">Availability</div>
+          <label class="filter-option"><input type="checkbox" id="filter-instock"> In Stock Only</label>
+          <label class="filter-option"><input type="checkbox" id="filter-sale"> On Sale</label>
+        </div>
+      </aside>
+
+      <!-- Main Products -->
+      <div>
+        <div class="shop-header">
+          <span class="shop-results-count" id="results-count">20 products</span>
+          <div class="shop-controls">
+            <select class="sort-select" id="sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="rating">Best Rated</option>
+            </select>
+            <div class="view-toggle">
+              <button class="view-btn active" id="view-grid" title="Grid view">⊞</button>
+              <button class="view-btn" id="view-list" title="List view">☰</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="products-container">
+          <div class="products-grid" id="grid-view"></div>
+          <div class="products-list" id="list-view" style="display:none"></div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination fade-in">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn" style="width:auto;padding:0 16px">Next ›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>VELVET</h3>
+      <p>Premium adult wellness, delivered with discretion and elegance.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">📷</a>
+        <a href="#" class="social-link">🐦</a>
+        <a href="#" class="social-link">📌</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li><li><a href="shop.html?category=Vibrators">Vibrators</a></li><li><a href="shop.html?category=Couples">Couples</a></li><li><a href="shop.html?category=Wellness">Wellness</a></li></ul></div>
+    <div class="footer-col"><h4>Help</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-text">© 2025 Velvet. Adults only (18+).</p>
+    <div class="payment-icons"><span class="payment-icon">VISA</span><span class="payment-icon">MC</span><span class="payment-icon">PayPal</span></div>
+  </div>
+</footer>
+
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies to enhance your experience. <a href="#">Learn more</a>.</p>
+  <div class="cookie-btns">
+    <button class="btn" id="cookie-accept" style="padding:10px 20px;font-size:12px">Accept</button>
+    <button class="btn btn-ghost" id="cookie-decline" style="padding:10px 20px;font-size:12px">Decline</button>
+  </div>
+</div>
+
+<button id="back-to-top">↑</button>
+
+<!-- Quick View Modal -->
+<div class="modal-overlay" id="quick-view-modal">
+  <div class="modal">
+    <button class="modal-close" id="qv-close">✕</button>
+    <div class="modal-grid">
+      <div class="modal-img"><img src="" alt="" id="qv-img"></div>
+      <div class="modal-info">
+        <div class="product-card-category" id="qv-category"></div>
+        <h3 id="qv-name"></h3>
+        <div class="product-card-rating" style="margin-bottom:16px"><span class="stars" id="qv-stars"></span></div>
+        <div class="product-card-price" style="margin-bottom:20px"><span class="price-current" id="qv-price"></span><span class="price-original" id="qv-orig"></span></div>
+        <button class="btn" id="qv-add-cart" style="width:100%;margin-bottom:10px">Add to Cart</button>
+        <a href="#" class="btn btn-outline" id="qv-view-full" style="display:block;text-align:center">View Full Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Velvet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-loader"><div class="spinner"></div></div>
+<div id="toast-container"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VELVET</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle"></button>
+      <a href="cart.html" class="nav-icon-btn">🛍️<span class="cart-badge" style="display:none">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <h1>Checkout</h1>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="breadcrumb-sep">›</span>
+    <a href="cart.html">Cart</a><span class="breadcrumb-sep">›</span>
+    <span>Checkout</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="checkout-layout">
+
+      <!-- Left: Forms -->
+      <div>
+        <!-- Progress Bar -->
+        <div class="checkout-progress">
+          <div class="checkout-step-item active">
+            <div class="step-num">1</div>
+            <span class="step-label">Contact</span>
+          </div>
+          <div class="checkout-step-item">
+            <div class="step-num">2</div>
+            <span class="step-label">Shipping</span>
+          </div>
+          <div class="checkout-step-item">
+            <div class="step-num">3</div>
+            <span class="step-label">Payment</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Contact -->
+        <div class="checkout-form active" id="step-1">
+          <h3 class="form-section-title">Contact Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="Sophie">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Martin">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+33 6 00 00 00 00">
+          </div>
+          <div style="margin-top:12px">
+            <label class="filter-option" style="font-size:13px">
+              <input type="checkbox" style="accent-color:var(--accent)"> Subscribe to Velvet Circle newsletter (10% off)
+            </label>
+          </div>
+          <div class="form-actions">
+            <a href="cart.html" class="btn btn-ghost" style="padding:12px 24px;font-size:12px">← Back to Cart</a>
+            <button class="btn step-next">Continue to Shipping →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Shipping -->
+        <div class="checkout-form" id="step-2">
+          <h3 class="form-section-title">Shipping Address</h3>
+          <div class="form-group">
+            <label class="form-label">Address Line 1</label>
+            <input type="text" class="form-input" placeholder="12 Rue de la Paix">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address Line 2 (optional)</label>
+            <input type="text" class="form-input" placeholder="Apt 4B">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">City</label>
+              <input type="text" class="form-input" placeholder="Paris">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Postal Code</label>
+              <input type="text" class="form-input" placeholder="75001">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <select class="form-input">
+              <option>France</option>
+              <option>Germany</option>
+              <option>Spain</option>
+              <option>Italy</option>
+              <option>Netherlands</option>
+              <option>Belgium</option>
+              <option>United Kingdom</option>
+              <option>Switzerland</option>
+              <option>Austria</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Shipping options -->
+          <div style="margin-top:24px">
+            <div class="filter-group-title" style="margin-bottom:16px">Shipping Method</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <label style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card-bg);border:1px solid var(--accent);border-radius:var(--radius);cursor:pointer">
+                <input type="radio" name="shipping" value="standard" checked style="accent-color:var(--accent)">
+                <span style="flex:1;font-size:14px">Standard — 2–3 business days</span>
+                <span style="font-size:14px;font-weight:700;color:var(--accent)">FREE</span>
+              </label>
+              <label style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius);cursor:pointer">
+                <input type="radio" name="shipping" value="express" style="accent-color:var(--accent)">
+                <span style="flex:1;font-size:14px">Express — next business day</span>
+                <span style="font-size:14px;font-weight:700">€9.99</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="discreet-notice">
+            <span class="notice-icon">📦</span>
+            <span>Delivered in plain, unmarked packaging. No product names or branding visible externally.</span>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-ghost step-back" style="padding:12px 24px;font-size:12px">← Back</button>
+            <button class="btn step-next">Continue to Payment →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="checkout-form" id="step-3">
+          <h3 class="form-section-title">Payment Details</h3>
+          <div class="form-group">
+            <label class="form-label">Card Number</label>
+            <input type="text" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Expiry Date</label>
+              <input type="text" class="form-input" placeholder="MM / YY" maxlength="7">
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV</label>
+              <input type="text" class="form-input" placeholder="•••" maxlength="4">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Name on Card</label>
+            <input type="text" class="form-input" placeholder="Sophie Martin">
+          </div>
+
+          <div class="discreet-notice">
+            <span class="notice-icon">🔒</span>
+            <span>Your card statement will show <strong>VLT Commerce Ltd</strong> — completely discreet. Secured by 256-bit SSL encryption.</span>
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+            <span class="payment-icon" style="font-size:13px;padding:6px 12px">VISA</span>
+            <span class="payment-icon" style="font-size:13px;padding:6px 12px">Mastercard</span>
+            <span class="payment-icon" style="font-size:13px;padding:6px 12px">PayPal</span>
+            <span class="payment-icon" style="font-size:13px;padding:6px 12px">Apple Pay</span>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-ghost step-back" style="padding:12px 24px;font-size:12px">← Back</button>
+            <button class="btn step-next" style="padding:14px 36px">Place Order 🎉</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Order Summary -->
+      <div class="order-summary">
+        <h3>Your Order</h3>
+        <div id="checkout-summary-items"></div>
+        <div class="summary-line total" style="margin-top:16px">
+          <span>Total</span><span id="checkout-total">€0.00</span>
+        </div>
+        <div class="discreet-notice" style="margin-top:16px">
+          <span class="notice-icon">🔒</span>
+          <span>Discreet billing &amp; packaging guaranteed.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies. <a href="#">Learn more</a>.</p>
+  <div class="cookie-btns">
+    <button class="btn" id="cookie-accept" style="padding:10px 20px;font-size:12px">Accept</button>
+    <button class="btn btn-ghost" id="cookie-decline" style="padding:10px 20px;font-size:12px">Decline</button>
+  </div>
+</div>
+<button id="back-to-top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

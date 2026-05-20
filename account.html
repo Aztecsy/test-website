@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account — Velvet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="page-loader"><div class="spinner"></div></div>
+<div id="toast-container"></div>
+<div id="announcement-bar">✦ Free discreet shipping on orders over €50 ✦</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">VELVET</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="blog.html">Journal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn theme-toggle"></button>
+      <button class="nav-icon-btn" id="nav-search-btn">🔍</button>
+      <a href="wishlist.html" class="nav-icon-btn">♡</a>
+      <a href="account.html" class="nav-icon-btn">👤</a>
+      <a href="cart.html" class="nav-icon-btn">🛍️<span class="cart-badge" style="display:none">0</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu-overlay"></div>
+<div id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+    <li><a href="wishlist.html">Wishlist</a></li><li><a href="account.html">Account</a></li><li><a href="cart.html">Cart</a></li>
+  </ul>
+</div>
+
+<div id="nav-search-overlay">
+  <button class="nav-search-close" id="nav-search-close">✕</button>
+  <div class="nav-search-inner">
+    <div class="nav-search-input-wrap"><span>🔍</span><input type="text" id="nav-search-input" placeholder="Search products…"></div>
+  </div>
+</div>
+
+<div class="page-header">
+  <h1>My Account</h1>
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Account</span></div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Auth Box (shown when logged out) -->
+    <div id="auth-box">
+      <div class="auth-container">
+        <div class="auth-form-panel">
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Sign In</button>
+            <button class="auth-tab" data-tab="register">Create Account</button>
+          </div>
+
+          <!-- Login Panel -->
+          <div class="auth-panel active" id="auth-login">
+            <form id="login-form">
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-input" placeholder="••••••••" required>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;font-size:13px">
+                <label class="filter-option" style="margin:0"><input type="checkbox" style="accent-color:var(--accent)"> Remember me</label>
+                <a href="#" style="color:var(--accent)">Forgot password?</a>
+              </div>
+              <button type="submit" class="btn" style="width:100%;padding:14px">Sign In →</button>
+            </form>
+          </div>
+
+          <!-- Register Panel -->
+          <div class="auth-panel" id="auth-register">
+            <form id="register-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-input" placeholder="Sophie" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-input" placeholder="Martin" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-input" placeholder="Min. 8 characters" required>
+              </div>
+              <div style="margin-bottom:24px;font-size:13px">
+                <label class="filter-option"><input type="checkbox" style="accent-color:var(--accent)"> Join the Velvet Circle newsletter</label>
+              </div>
+              <button type="submit" class="btn" style="width:100%;padding:14px">Create Account →</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard (shown after login) -->
+    <div id="dashboard-view" style="display:none">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px">
+        <div>
+          <h2 style="margin-bottom:4px">Welcome back, Sophie 👋</h2>
+          <p style="font-size:13px">Member since January 2024 · Velvet Circle member</p>
+        </div>
+        <button class="btn btn-ghost" style="padding:10px 20px;font-size:12px" onclick="document.getElementById('dashboard-view').style.display='none';document.getElementById('auth-box').style.display='block'">Sign Out</button>
+      </div>
+
+      <!-- Dashboard cards -->
+      <div class="account-dashboard">
+        <div class="dash-card" onclick="document.querySelectorAll('.account-tab')[0].click()">
+          <div class="dash-card-icon">📦</div>
+          <h4>Orders</h4>
+          <p style="color:var(--accent);font-weight:700">3 orders</p>
+        </div>
+        <div class="dash-card" onclick="document.querySelectorAll('.account-tab')[1].click()">
+          <div class="dash-card-icon">📍</div>
+          <h4>Addresses</h4>
+          <p>1 saved</p>
+        </div>
+        <div class="dash-card" onclick="window.location.href='wishlist.html'">
+          <div class="dash-card-icon">♡</div>
+          <h4>Wishlist</h4>
+          <p>View saved items</p>
+        </div>
+        <div class="dash-card" onclick="document.querySelectorAll('.account-tab')[2].click()">
+          <div class="dash-card-icon">⚙️</div>
+          <h4>Settings</h4>
+          <p>Edit profile</p>
+        </div>
+      </div>
+
+      <!-- Account Tabs -->
+      <div class="account-tabs">
+        <button class="account-tab active" data-tab="orders">Order History</button>
+        <button class="account-tab" data-tab="addresses">Addresses</button>
+        <button class="account-tab" data-tab="settings">Settings</button>
+      </div>
+
+      <!-- Orders Panel -->
+      <div class="account-panel active" id="panel-orders">
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Date</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#VLT-2847</td>
+              <td>15 May 2025</td>
+              <td>2 items</td>
+              <td>€149.98</td>
+              <td><span class="status-badge status-delivered">Delivered</span></td>
+              <td><a href="#" style="color:var(--accent);font-size:12px">View</a></td>
+            </tr>
+            <tr>
+              <td>#VLT-2691</td>
+              <td>2 Apr 2025</td>
+              <td>1 item</td>
+              <td>€89.99</td>
+              <td><span class="status-badge status-shipped">Shipped</span></td>
+              <td><a href="#" style="color:var(--accent);font-size:12px">Track</a></td>
+            </tr>
+            <tr>
+              <td>#VLT-2104</td>
+              <td>18 Jan 2025</td>
+              <td>3 items</td>
+              <td>€224.97</td>
+              <td><span class="status-badge status-delivered">Delivered</span></td>
+              <td><a href="#" style="color:var(--accent);font-size:12px">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Addresses Panel -->
+      <div class="account-panel" id="panel-addresses">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
+          <div style="background:var(--card-bg);border:1px solid var(--accent);border-radius:var(--radius);padding:24px;position:relative">
+            <span style="position:absolute;top:12px;right:12px;font-size:10px;background:var(--accent);color:#fff;padding:3px 8px;border-radius:2px;font-weight:700;letter-spacing:.5px">DEFAULT</span>
+            <h4 style="margin-bottom:8px">Sophie Martin</h4>
+            <p style="font-size:13px;line-height:1.8">12 Rue de la Paix<br>Apt 4B<br>75001 Paris<br>France</p>
+            <div style="margin-top:16px;display:flex;gap:10px">
+              <button class="btn btn-ghost" style="padding:8px 16px;font-size:11px">Edit</button>
+              <button class="btn btn-ghost" style="padding:8px 16px;font-size:11px">Delete</button>
+            </div>
+          </div>
+          <div style="background:var(--card-bg);border:2px dashed var(--card-border);border-radius:var(--radius);padding:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color var(--transition)" onmouseenter="this.style.borderColor='var(--accent)'" onmouseleave="this.style.borderColor='var(--card-border)'" onclick="showToast('Address form coming soon','default','📍')">
+            <div style="text-align:center;color:var(--text-secondary)">
+              <div style="font-size:28px;margin-bottom:8px">+</div>
+              <div style="font-size:13px">Add New Address</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Panel -->
+      <div class="account-panel" id="panel-settings">
+        <div style="max-width:480px">
+          <h3 style="margin-bottom:24px;font-size:1.1rem">Profile Settings</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" value="Sophie">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" value="Martin">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" value="sophie@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">New Password</label>
+            <input type="password" class="form-input" placeholder="Leave blank to keep current">
+          </div>
+          <div style="margin:24px 0;padding:20px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius)">
+            <div class="filter-group-title" style="margin-bottom:12px">Communication Preferences</div>
+            <label class="filter-option"><input type="checkbox" checked style="accent-color:var(--accent)"> Newsletter &amp; exclusive offers</label>
+            <label class="filter-option"><input type="checkbox" checked style="accent-color:var(--accent)"> Order updates</label>
+            <label class="filter-option"><input type="checkbox" style="accent-color:var(--accent)"> New arrivals &amp; restocks</label>
+          </div>
+          <button class="btn" style="padding:12px 32px" onclick="showToast('Settings saved!','success','✓')">Save Changes</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><h3>VELVET</h3><p>Premium adult wellness, delivered with discretion.</p></div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li></ul></div>
+    <div class="footer-col"><h4>Help</h4><ul><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-bottom-text">© 2025 Velvet. Adults only (18+).</p>
+    <div class="payment-icons"><span class="payment-icon">VISA</span><span class="payment-icon">MC</span><span class="payment-icon">PayPal</span></div>
+  </div>
+</footer>
+
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies. <a href="#">Learn more</a>.</p>
+  <div class="cookie-btns">
+    <button class="btn" id="cookie-accept" style="padding:10px 20px;font-size:12px">Accept</button>
+    <button class="btn btn-ghost" id="cookie-decline" style="padding:10px 20px;font-size:12px">Decline</button>
+  </div>
+</div>
+<button id="back-to-top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
